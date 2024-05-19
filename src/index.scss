@@ -49,50 +49,16 @@ line-height: 39px;
   }
 
 
-  .card{
-    border: 1px solid rgb(243, 243, 243);
-border-radius: 40px;
-background: rgb(255, 255, 255);
-padding: 30px;
-width: 210px;
-transition: all .3s linear;
-h5{
-  font-size: 14px;
-font-weight: 400;
-line-height: 17px;
-margin-bottom: 14px;
-}
-span{
-  color: rgb(189, 189, 189);
-font-size: 11px;
-font-weight: 500;
-line-height: 13px;
-text-transform: uppercase;
-margin-bottom: 2px;
-}
-b{
-  font-size: 14px;
-font-weight: 700;
-line-height: 17px;
-}
+  
 
-&:hover{
-  border: 1px solid rgb(248, 248, 248);
-border-radius: 40px;
-box-shadow: 0px 14px 20px 0px rgba(0, 0, 0, 0.05);
-background: rgb(255, 255, 255);
-transform: translateY(-5px);
-}
-  }
-
-  .button{
-    border: 1px solid rgb(242, 242, 242);
-    border-radius: 8px;
-    background: rgb(255, 255, 255);
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-  }
+  // .button{
+  //   border: 1px solid rgb(242, 242, 242);
+  //   border-radius: 8px;
+  //   background: rgb(255, 255, 255);
+  //   width: 32px;
+  //   height: 32px;
+  //   cursor: pointer;
+  // }
 
   .sneakers{
     gap: 40px;
@@ -102,6 +68,14 @@ transform: translateY(-5px);
     border: 1px solid rgb(243, 243, 243);
 border-radius: 10px;
 padding: 0 15px;
+position: relative;
+.clear{
+  position: absolute;
+  right: 15px;
+  width: 21px;
+  height: 21px;
+  top: 13px;
+}
 input{
   font-size: 16px;
   border: none;
@@ -116,41 +90,10 @@ line-height: 17px;
 }
   }
 
-  .favorite{
-    position: absolute;
-    cursor: pointer;
-  }
 
+  
 
-
-  .overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-
-  .drawer{
-    display: flex;
-flex-direction: column;
-    padding: 30px;
-    position: absolute;
-width: 420px;
-height: 100%;
-right: 0;
-    box-shadow: -10px 4px 24px 0px rgba(0, 0, 0, 0.1);
-background: rgb(255, 255, 255);
-h2{
-  margin: 0;
-  font-size: 24px;
-font-weight: 700;
-line-height: 29px;
-
-}
-  }
+ 
 
   .items{
   overflow: auto;
@@ -206,6 +149,11 @@ margin-right: 20px;
     }
    .greenButton{
     position: relative;
+    &:disabled{
+      background-color: #bebebe;
+      cursor: default;
+      animation: button-loading 0.8s ease-in-out infinite;
+    }
 &:hover{
   img{
     transform: translateX(5px);
@@ -235,4 +183,41 @@ transition: all .3s linear;
 &:hover{
   background-color: rgb(113, 190, 113);
 }
+  }
+
+
+  .cartEmpty{
+    text-align: center;
+    p{
+      width: 280px;
+      line-height: 24px;
+    }
+    .greenButton{
+      width: 245px;
+      margin-top: 20px;
+      &:hover{
+        img{
+          transform: rotate(180deg) translateX(3px);
+        }
+      }
+      img{
+        position: relative;
+        right: 8px;
+        transform: rotate(180deg);
+        transition: all .3s linear;
+      }
+    }
+  }
+
+
+  @keyframes button-loading {
+    0%{
+      opacity: 1;
+    }
+    50%{
+      opacity: 0.7;
+    }
+    100%{
+      opacity: 1;
+    }
   }

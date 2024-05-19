@@ -1,0 +1,44 @@
+.card{
+  border: 1px solid rgb(243, 243, 243);
+border-radius: 40px;
+background: rgb(255, 255, 255);
+padding: 30px;
+width: 210px;
+transition: all .3s linear;
+
+h5{
+font-size: 14px;
+font-weight: 400;
+line-height: 17px;
+margin-bottom: 14px;
+}
+span{
+color: rgb(189, 189, 189);
+font-size: 11px;
+font-weight: 500;
+line-height: 13px;
+text-transform: uppercase;
+margin-bottom: 2px;
+}
+b{
+font-size: 14px;
+font-weight: 700;
+line-height: 17px;
+}
+
+&:hover{
+border: 1px solid rgb(248, 248, 248);
+border-radius: 40px;
+box-shadow: 0px 14px 20px 0px rgba(0, 0, 0, 0.05);
+background: rgb(255, 255, 255);
+transform: translateY(-5px);
+}
+.plus{
+  cursor: pointer;
+}
+}
+
+.favorite{
+  position: absolute;
+  cursor: pointer;
+}
